@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = MainActivity.class.getSimpleName();
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.test);
+        setContentView(R.layout.activity_main);
         initCompanents();
         ((Button) findViewById(R.id.button_generate)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private void resetAll(){
         showCompanents(false);
-        for (EditText resultET : resultEditTexts){
-            resultET.setText("");
+        for (int i = 0; i < 5; i++){
+            resultEditTexts[i].setText("");
+            exerciseTextViews[i].setText("");
         }
         rightAnswers = 0;
         wrongAnswers = 0;
